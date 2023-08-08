@@ -1,6 +1,7 @@
 import express from "express";
+import { deleteUser } from "../controller/user.controller.js";
+import { verifyToken } from "../middleware/jwt.js";
 const router = express.Router();
-router.get("/test", (req, res) => {
-  res.send("It Works");
-});
+router.delete("/:id", verifyToken, deleteUser);
+
 export default router;

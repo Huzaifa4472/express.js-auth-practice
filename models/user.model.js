@@ -27,7 +27,7 @@ const UserSchema = new Schema(
       type: Number,
     },
     desc: {
-      type: false,
+      type: String,
       required: false,
     },
     isSeller: {
@@ -37,4 +37,4 @@ const UserSchema = new Schema(
   },
   { timestamps: true }
 );
-module.exports = mongoose.model("User", UserSchema);
+export default mongoose.model("User", UserSchema);
